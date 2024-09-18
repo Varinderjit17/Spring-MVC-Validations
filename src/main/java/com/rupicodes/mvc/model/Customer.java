@@ -5,13 +5,14 @@ import jakarta.validation.constraints.Size;
 
 public class Customer {
     @NotNull(message = "First Name is required")
+    @Size(min=3, message = "Atleast 3 characters required")
     private  String firstName;
 
     @NotNull(message = "Last Name is required")
     @Size(min=3, message = "Atleast 3 characters required")
     private String lastName;
 
-    private Customer() {}
+    public Customer() {}
 
     public String getFirstName() {
         return firstName;
