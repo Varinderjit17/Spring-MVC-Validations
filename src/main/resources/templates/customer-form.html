@@ -14,9 +14,14 @@
 <form th:action="@{/processCustomerForm}" th:object="${customer}" method="POST">
     <label>First Name</label>
     <input type="text" th:field="${customer.firstName}"><br><br>
+
     <label>Last Name</label>
     <input type="text" th:field="${customer.lastName}"><br>
-    <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="error"></span>
+    <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="error"></span><br><br>
+
+    <input type="number" th:field="${customer.freePass}"><br>
+    <span th:if="${#fields.hasErrors('freePass')}" th:errors="*{freePass}" class="error"></span><br><br>
+
     <br><br>
     <input type="submit" value="SUBMIT">
 </form>
